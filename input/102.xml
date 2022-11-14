@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<person>
+  <id>102</id>
+  <fullname>Jane Doe</fullname>
+  <created>1999-01-01T04:00:00Z</created>
+  <status>inactive</status>
+  <sem:triples xmlns:sem="http://marklogic.com/semantics">
+    <sem:triple>
+            <sem:subject>http://example.org/102</sem:subject>
+            <sem:predicate>http://example.org/knows</sem:predicate>
+            <sem:object>http://example.org/101</sem:object>
+    </sem:triple>
+    <sem:triple>
+            <sem:subject>http://example.org/102</sem:subject>
+            <sem:predicate>http://example.org/likes</sem:predicate>
+            <sem:object datatype="http://www.w3.org/2001/XMLSchema#string">bananas</sem:object>
+    </sem:triple>
+  </sem:triples>
+</person>

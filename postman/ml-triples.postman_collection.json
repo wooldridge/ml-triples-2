@@ -1,0 +1,334 @@
+{
+	"info": {
+		"_postman_id": "de3ba9d1-2516-4d90-8ce0-fa57df34178f",
+		"name": "ml-triples",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1437395"
+	},
+	"item": [
+		{
+			"name": "Semantics: SPARQL",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "digest",
+					"digest": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ml-triples-user",
+							"type": "string"
+						},
+						{
+							"key": "disableRetryRequest",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "algorithm",
+							"value": "MD5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/sparql-results+xml",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/sparql-query",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nSELECT ?s ?o\nWHERE\n{ \n    ?s <http://example.org/likes> ?o\n}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8093/v1/graphs/sparql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8093",
+					"path": [
+						"v1",
+						"graphs",
+						"sparql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Semantics: things",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "digest",
+					"digest": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ml-triples-user",
+							"type": "string"
+						},
+						{
+							"key": "disableRetryRequest",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "algorithm",
+							"value": "MD5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/rdf+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8093/v1/graphs/things?iri=http://example.org/102",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8093",
+					"path": [
+						"v1",
+						"graphs",
+						"things"
+					],
+					"query": [
+						{
+							"key": "iri",
+							"value": "http://example.org/102"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Semantics: things (Entity Viewer)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "digest",
+					"digest": [
+						{
+							"key": "username",
+							"value": "ml-triples-user",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "disableRetryRequest",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "algorithm",
+							"value": "MD5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/rdf+json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/sparql-query",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8099/v1/graphs/things?iri=http://example.org/person/10001.xml",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8099",
+					"path": [
+						"v1",
+						"graphs",
+						"things"
+					],
+					"query": [
+						{
+							"key": "iri",
+							"value": "http://example.org/person/10001.xml"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query Options",
+			"request": {
+				"auth": {
+					"type": "digest",
+					"digest": [
+						{
+							"key": "username",
+							"value": "ml-triples-user",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "disableRetryRequest",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "algorithm",
+							"value": "MD5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8093/v1/config/query",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8093",
+					"path": [
+						"v1",
+						"config",
+						"query"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search API",
+			"request": {
+				"auth": {
+					"type": "digest",
+					"digest": [
+						{
+							"key": "username",
+							"value": "ml-triples-user",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "disableRetryRequest",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "algorithm",
+							"value": "MD5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8093/v1/search?format=json&options=query-options",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8093",
+					"path": [
+						"v1",
+						"search"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "options",
+							"value": "query-options"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

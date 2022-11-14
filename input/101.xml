@@ -1,0 +1,18 @@
+<person>
+  <id>101</id>
+  <fullname>John Smith</fullname>
+  <created>2022-05-01T08:00:00Z</created>
+  <status>active</status>
+  <sem:triples xmlns:sem="http://marklogic.com/semantics">
+    <sem:triple>
+            <sem:subject>http://example.org/101</sem:subject>
+            <sem:predicate>http://example.org/knows</sem:predicate>
+            <sem:object>http://example.org/102</sem:object>
+    </sem:triple>
+    <sem:triple>
+            <sem:subject>http://example.org/101</sem:subject>
+            <sem:predicate>http://example.org/likes</sem:predicate>
+            <sem:object datatype="http://www.w3.org/2001/XMLSchema#string">apples</sem:object>
+    </sem:triple>
+   </sem:triples>
+</person>
